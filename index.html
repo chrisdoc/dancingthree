@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discoverthreejs.com Ch 1.1: Your First Scene</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta charset="UTF-8" />
+
+    <link
+      rel="icon"
+      href="https://discoverthreejs.com/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <link href="styles/main.css" rel="stylesheet" type="text/css" />
+<script>
+//window.THREE = THREE || {}
+</script>
+    <!--
+      Include the main three.js script.
+
+      The global variable THREE will be
+      available for use in any scripts
+      loaded after this one.
+    -->
+
+    <script id="vertexShader" type="x-shader/x-vertex">
+      varying vec2 vUv;
+      void main()
+      {
+        vUv = uv;
+        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+        gl_Position = projectionMatrix * mvPosition;
+      }
+    </script>
+    
+    <script id="fragmentShader" type="x-shader/x-fragment">
+      uniform sampler2D texture;
+      uniform vec3 color;
+      varying vec2 vUv;
+      void main()
+      {
+        vec3 tColor = texture2D( texture, vUv ).rgb;
+        float a = (length(tColor - color) - 0.5) * 7.0;
+        
+        gl_FragColor = vec4(tColor, a);
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1 class="title">
+      Dancing
+    </h1>
+
+    <div id="scene-container"><!-- This div will hold our scene --></div>
+
+    <!--
+      Finally, include the script that
+      runs your three.js app.
+    -->
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "discoverthreejs-com-ch-1-1-getting-started",
+  "version": "1.1.0",
+  "description": "Final code from Ch 1.1 of Discover three.js",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/looeee/discoverthree.com-examples.git"
+  },
+  "keywords": [
+    "three.js",
+    "web",
+    "animation",
+    "javascript",
+    "examples",
+    "tutorials",
+    "blog",
+    "book"
+  ],
+  "author": "Lewy Blue",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/looeee/discoverthree.com-examples/issues"
+  },
+  "homepage": "https://discoverthreejs.com",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "assets": "^3.0.1",
+    "three": ">= 0.102.0",
+    "three-orbitcontrols": "^2.102.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
